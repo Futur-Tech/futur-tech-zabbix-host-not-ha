@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2022-04-27T08:34:59Z</date>
+    <date>2022-04-27T08:57:58Z</date>
     <groups>
         <group>
             <name>Templates/Futur-Tech/Availability</name>
@@ -11,12 +11,7 @@
         <template>
             <template>Template Futur-Tech Host Not High-Availability</template>
             <name>Template Futur-Tech Host Not High-Availability</name>
-            <description>https://github.com/Futur-Tech/futur-tech-zabbix-templates&#13;
-&#13;
-This template will change macro in order to:&#13;
-- Increase No Data timeout trigger to 20d (Zabbix Agent and SNMP check)&#13;
-- Disable trigger for network cards being down&#13;
-- Increase StorageCraft timeout</description>
+            <description>https://github.com/Futur-Tech/futur-tech-zabbix-host-not-ha</description>
             <groups>
                 <group>
                     <name>Templates/Futur-Tech/Availability</name>
