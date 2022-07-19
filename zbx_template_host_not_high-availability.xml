@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2022-04-27T08:57:58Z</date>
+    <date>2022-07-19T17:28:30Z</date>
     <groups>
         <group>
             <name>Templates/Futur-Tech/Availability</name>
@@ -59,6 +59,11 @@
                     <macro>{$STORAGECRAFT.COLLAPSE.WARN}</macro>
                     <value>10d</value>
                     <description>Warning max age for latest successful Collapse</description>
+                </macro>
+                <macro>
+                    <macro>{$STORAGECRAFT.DEST_IS_NOT_HA}</macro>
+                    <value>1</value>
+                    <description>Destination for Backup and Collapse is not always reachable. Will ignore some backups and collapse error log triggers.</description>
                 </macro>
             </macros>
         </template>
