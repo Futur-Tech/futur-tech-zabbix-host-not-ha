@@ -1,0 +1,43 @@
+zabbix_export:
+  version: '6.0'
+  date: '2023-08-02T16:01:23Z'
+  groups:
+    - uuid: 820e39239e174c84ade3cc7156c9d117
+      name: Templates/Futur-Tech/Availability
+  templates:
+    - uuid: e287a8b693e94229b085609307ce8989
+      template: 'Futur-Tech Host Not High-Availability'
+      name: 'Futur-Tech Host Not High-Availability'
+      description: 'https://github.com/Futur-Tech/futur-tech-zabbix-host-not-ha'
+      groups:
+        - name: Templates/Futur-Tech/Availability
+      tags:
+        - tag: Futur-Tech
+      macros:
+        - macro: '{$AGENT.NODATA_TIMEOUT}'
+          value: 20d
+        - macro: '{$IFCONTROL}'
+          value: '0'
+          description: 'Disable trigger for network cards being down'
+        - macro: '{$PING.TRIGGER_DISABLED}'
+          value: '1'
+        - macro: '{$SNMP.TIMEOUT}'
+          value: 20d
+        - macro: '{$STORAGECRAFT.BACKUP.CRIT}'
+          value: 14d
+          description: 'Critical max age for latest successful Backup'
+        - macro: '{$STORAGECRAFT.BACKUP.WARN}'
+          value: 7d
+          description: 'Warning max age for latest successful Backup'
+        - macro: '{$STORAGECRAFT.COLLAPSE.CHKDSK.CRIT}'
+          value: 21d
+          description: 'Max age for latest successful CHKDSK on Collapse'
+        - macro: '{$STORAGECRAFT.COLLAPSE.CRIT}'
+          value: 20d
+          description: 'Critical max age for latest successful Collapse'
+        - macro: '{$STORAGECRAFT.COLLAPSE.WARN}'
+          value: 10d
+          description: 'Warning max age for latest successful Collapse'
+        - macro: '{$STORAGECRAFT.DEST_IS_NOT_HA}'
+          value: '1'
+          description: 'Destination for Backup and Collapse is not always reachable. Will ignore some backups and collapse error log triggers.'
